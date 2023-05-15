@@ -3,19 +3,37 @@
 <head>
 	<title>REVA University Admission Form</title>
 	<style>
+	body {
+  background: linear-gradient(-45deg, #f9d423, #e65c00, #333333, #29323c);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+	
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
+			background-color: white;
 		}
 		h1 {
 			text-align: center;
-			color: #0077b6;
+			color: white;
 			margin-top: 50px;
 		}
 		form {
 			margin: auto;
 			padding: 20px;
-			background-color: #fff;
+			background-color: black;
 			border-radius: 10px;
 			box-shadow: 0px 0px 10px #999;
 			width: 50%;
@@ -24,6 +42,7 @@
 			display: block;
 			font-weight: bold;
 			margin-bottom: 10px;
+			color: white;
 		}
 		input[type="text"],
 		input[type="email"],
@@ -105,7 +124,7 @@
 	</script>
 </head>
 <body>
-		<img src="https://resources.saylor.org/wwwresources/wp-content/uploads/20220525123841/REVA-University-LOGO-1200x450.jpg" alt="REVA University Logo">
+		<img src="data:image/png;base64,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" alt="REVA University Logo">
 		<style>
   img {
     display: block;
@@ -116,7 +135,7 @@
   }
 </style>
 		<h1>~Admission Form~</h1>
-	<form name="admissionForm" onsubmit="return validateForm()">
+	<form name="AdmissionForm" onsubmit="return validateForm()">
 		<label>Name:</label>
 		<input type="text" name="name">
 
