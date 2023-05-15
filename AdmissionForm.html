@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REVA University Admission Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			color: #0077b6;
+			margin-top: 50px;
+		}
+		form {
+			margin: auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px #999;
+			width: 50%;
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		select {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+			background-color: #f2f2f2;
+		}
+		input[type="radio"] {
+			margin-right: 10px;
+		}
+		input[type="submit"] {
+			background-color: #0077b6;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #005e8e;
+		}
+	</style>
+	<script type="text/javascript">
+		function validateForm() {
+			var name = document.forms["admissionForm"]["name"].value;
+			var email = document.forms["admissionForm"]["email"].value;
+			var phone = document.forms["admissionForm"]["phone"].value;
+			var gender = document.forms["admissionForm"]["gender"].value;
+			var program = document.forms["admissionForm"]["program"].value;
+			var department = document.forms["admissionForm"]["department"].value;
+			var message = "";
+			var isValid = true;
+
+			if (name == "") {
+				message += "Please enter your name.\n";
+				isValid = false;
+			}
+
+			if (email == "") {
+				message += "Please enter your email.\n";
+				isValid = false;
+			}
+
+			if (phone == "") {
+				message += "Please enter your phone number.\n";
+				isValid = false;
+			}
+
+			if (gender == "") {
+				message += "Please select your gender.\n";
+				isValid = false;
+			}
+
+			if (program == "") {
+				message += "Please select the program you are applying for.\n";
+				isValid = false;
+			}
+
+			if (department == "") {
+				message += "Please select the department you are applying for.\n";
+				isValid = false;
+			}
+
+			if (!isValid) {
+				alert(message);
+				return false;
+			}
+
+			alert("Your admission form for REVA University has been submitted successfully!");
+			return true;
+		}
+	</script>
+</head>
+<body>
+		<img src="https://resources.saylor.org/wwwresources/wp-content/uploads/20220525123841/REVA-University-LOGO-1200x450.jpg" alt="REVA University Logo">
+		<style>
+  img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100px; /* Add this line to limit the maximum height of the logo */
+  }
+</style>
+		<h1>~Admission Form~</h1>
+	<form name="admissionForm" onsubmit="return validateForm()">
+		<label>Name:</label>
+		<input type="text" name="name">
+
+		<label>Email:</label>
+		<input type="email" name="email">
+
+		<label>Phone:</label>
+        <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Enter your 10-digit phone number"> 
+        	<label>Gender:</label>
+	<input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>
+	<input type="radio" name="gender" value="female" id="female"><label for="female">Female</label>
+	<input type="radio" name="gender" value="other" id="other"><label for="other">Other</label>
+
+	<label>Program:</label>
+	<select name="program">
+		<option value="">--Select--</option>
+		<option value="B.Tech">B.Tech</option>
+		<option value="M.Tech">M.Tech</option>
+		<option value="MBA">MBA</option>
+		<option value="BBA">BBA</option>
+	</select>
+
+	<label>Department:</label>
+	<select name="department">
+		<option value="">--Select--</option>
+		<option value="Computer Science">Computer Science</option>
+		<option value="Mechanical Engineering">Mechanical Engineering</option>
+		<option value="Electrical Engineering">Electrical Engineering</option>
+		<option value="Management">Management</option>
+        <option value="Cyber Security">Cyber Security</option> 
+	</select>
+
+	<input type="submit" value="Submit">
+    </form>
+    </body>
+</html>
+        
